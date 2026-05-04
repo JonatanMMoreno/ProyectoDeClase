@@ -3,25 +3,33 @@ import { Text, TouchableOpacity, StyleSheet } from "react-native";
 type CustomButtonProps =| {
     title: string;
     onPress: () => void;
+    variant?: "primary" | "secondary" | "tertiary";
+
 }
 
-export default function CustomButton ({title, onPress}:CustomButtonProps){
-
-    return(<TouchableOpacity style={styles.button} onPress={onPress}>
+export default function CustomButton ({title, onPress, variant='primary'}:CustomButtonProps){
+    const styles = getStyles(variant);
+    return(
+    <TouchableOpacity style={styles.button} onPress={onPress}>
         <Text style={styles.buttonText}> {title} </Text>
     </TouchableOpacity>);
 }
 
 
-const styles = StyleSheet.create({
+const getStyles = (variant: "primary" | "secondary" | "tertiary") => 
+    
+    StyleSheet.create({
     button:{
         borderRadius: 6,
-        backgroundColor: 'navy',
+        //operador ternario
+        backgroundColor: variant === "primary" ? 'navy' : 
+                            variant === "secondary" ? 'gray': 
+                            "#fff", 
         padding:12,
-        width: 250,
+        width: 150,
     },
     buttonText:{
-        color:'#c8ff02'
+        color: variant === "tertiary" ? "#000000" : "#fff"
     }
 
 
