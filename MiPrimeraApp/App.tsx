@@ -6,7 +6,10 @@ import { useState } from 'react';
 
 export default function App() {
   //definicion de una variable de estado en ReactNative
-const [inputText, setInputText] = useState("maria"); 
+const [email, setEmail] = useState(""); 
+const [password, setPassword] = useState(""); 
+const [name, setName] = useState("");
+const [phoneNumber, setPhonenumber] = useState("");
 
 
   return (
@@ -15,10 +18,26 @@ const [inputText, setInputText] = useState("maria");
       <StatusBar style="auto" />
       
       <CustomInput
-      type={'number'} 
-      placeholder={''} 
-      value={inputText} 
-      onChange={setInputText} />
+      placeholder={"Ingresa tu nombre"} 
+      value={name} 
+      onChange={setName} />
+
+      <CustomInput
+      placeholder={"Ingresa tu numero de telefono"} 
+      value={phoneNumber} 
+      onChange={setPhonenumber} />
+
+      <CustomInput
+      type={"email"} 
+      placeholder={'micorreo@gmail.com'} 
+      value={email} 
+      onChange={setEmail} />
+
+      <CustomInput
+      type={"password"} 
+      placeholder={"Ingresa tu contraseña"} 
+      value={password} 
+      onChange={setPassword} />
 
       <CustomButton 
       title={"App"} 

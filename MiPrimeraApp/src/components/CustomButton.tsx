@@ -3,8 +3,10 @@ import { Text, TouchableOpacity, StyleSheet } from "react-native";
 type CustomButtonProps =| {
     title: string;
     onPress: () => void;
+    //tipo: union de literales
     variant?: "primary" | "secondary" | "tertiary";
-
+    //tipo:literal
+    //variant: "primary"
 }
 
 export default function CustomButton ({title, onPress, variant='primary'}:CustomButtonProps){
