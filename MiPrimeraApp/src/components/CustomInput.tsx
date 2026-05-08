@@ -23,14 +23,14 @@ export default function CustomInput ({type = "text", placeholder, value, onChang
                 'default'
     const getError = () => {
         if (type === 'email' && !value.includes('@')) return 'Correo invalido';
-        if (type === 'password' && value.length < 4) return 'La contraseña es invalida'
+        if (type === 'password' && value.length < 4) return 'La contraseña es muy debil'
         if (type === 'number' && (value.length != 8 || value.includes('-'))) return 'Numero de telefono invalido'
     }                       
     const error = getError();                          
     return(
         //wrapper
         <View style={styles.wrapper}>
-        <View style ={[styles.inputContainer, styles.inputError]}>
+        <View style ={[styles.inputContainer, error && styles.inputError]}>
             <MaterialIcons name={icon as any} size={20} color="#00000"/>
             <TextInput
                 placeholder={placeholder}
