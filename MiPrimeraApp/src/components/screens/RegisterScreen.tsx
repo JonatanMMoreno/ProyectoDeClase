@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { StatusBar, View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import CustomInput from "../CustomInput";
 import CustomButton from "../CustomButton"
 ;
 
-export default function RegisterScreen
+export default function RegisterScreen () {
 
-export default function App() {
   //definicion de una variable de estado en ReactNative
 const [email, setEmail] = useState(""); 
 const [password, setPassword] = useState(""); 
@@ -17,7 +16,6 @@ const [phoneNumber, setPhonenumber] = useState("");
   return (
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
       
       <CustomInput
       placeholder={"Ingresa tu nombre"} 
@@ -61,8 +59,6 @@ const [phoneNumber, setPhonenumber] = useState("");
       }} 
       variant = "tertiary"
       />
-      
-      
     </View>
   );
 }

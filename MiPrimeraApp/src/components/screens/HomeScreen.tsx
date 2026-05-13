@@ -1,14 +1,18 @@
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParmList } from "../navigation/StackNavigator";
+import { StatusBar } from "expo-status-bar";
 
 
-type Props = NativeStacksScreenProps<RootStackParamList,'Home'>;
+type Props = NativeStackScreenProps<RootStackParmList,'Home'>;
+
 export default function HomeScreen({route}: Props){
-    const {} = route.
+    const {email} = route.params;
 
     return(
         <View>
-            Bienvenido a Home
+                <StatusBar style="auto" />
+            <Text>Bienvenido a Home</Text>
         </View>
     )
 
