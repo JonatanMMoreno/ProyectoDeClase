@@ -17,7 +17,7 @@ export default function HomeScreen({route, navigation}: Props){
         <View>
                 <StatusBar style="auto" />
             <Text>Hola {email}, Bienvenido a Home</Text>
-            <CustomButton title={""} onPress={handleLoadSetting} />
+            <CustomButton title={"Hola"} onPress={handleLoadSetting} />
         </View>
     )
 

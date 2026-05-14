@@ -22,8 +22,8 @@ export default function LoginScreen({navigation}:any) {
             onChange={setEmail}/>
             <CustomInput type={"password"} 
             placeholder={"Ingresa tu Contraseña"} 
-            value={""} 
-            onChange={()=>{}}/>
+            value={email} 
+            onChange={setEmail}/>
             
             <CustomButton title={"Inciar Sesion"} 
             onPress={handleLogin}/>
